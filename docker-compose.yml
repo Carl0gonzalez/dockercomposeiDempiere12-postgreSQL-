@@ -1,0 +1,37 @@
+services:
+  idempiere:
+    build: .
+    container_name: idempiere12
+    environment:
+      - IDEMPIERE_FOLDER=sas
+      - IDEMPIERE_PORT=60
+      - IDEMPIERE_ENV=idempiere
+      - IDEMPIERE_DB_PASS=adempiere
+      - IDEMPIERE_DB_SERVER=db
+    ports:
+      - "8660:8660"
+      - "8460:8460"
+    volumes:
+      - idempiere_data:/opt/sas/60_idempiere
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15
+    container_name: idempiere-db
+    restart: always
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: adempiere
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./init-user.sql:/docker-entrypoint-initdb.d/init-user.sql:ro
+    ports:
+      - "5436:5432"
+
+volumes:
+  idempiere_data:
+  pgdata:
+
+
