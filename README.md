@@ -1,71 +1,35 @@
-# iDempiere 12 + PostgreSQL via Docker Compose
+# 🐳 dockercomposeiDempiere12-postgreSQL-
 
-Este proyecto configura una instalación de iDempiere 12 utilizando Docker y Docker Compose. Es ideal para entornos de desarrollo y pruebas rápidas.
+Repositorio orientado al **levantamiento de iDempiere 12 con PostgreSQL usando Docker Compose**, ideal para ambientes reproducibles de prueba o desarrollo.
 
-## 🚀 Requisitos
+![Docker](https://img.shields.io/badge/Docker-compose-blue?logo=docker) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-db-336791?logo=postgresql) ![iDempiere](https://img.shields.io/badge/iDempiere-ERP-0A7E8C)
 
-Asegúrate de tener instalado:
+---
 
-- [Docker Engine](https://docs.docker.com/engine/install/)
-- [Docker Compose](https://docs.docker.com/compose/install/)
-- Al menos 4 GB de RAM disponible para los contenedores
-- Acceso a puertos locales `8480`, `8640`, y `5436` libres
+## 📌 Objetivo
 
-## 📦 Servicios
+Automatizar la preparación de un entorno iDempiere basado en contenedores, reduciendo configuración manual y facilitando pruebas repetibles.
 
-- `idempiere`: Servidor de aplicaciones iDempiere (versión 12)
-- `db`: PostgreSQL 15 configurado como backend de base de datos
+## 🧩 Qué aporta
 
-## 🔧 Uso
+- Estandarización del entorno.
+- Base para demos y laboratorios técnicos.
+- Arranque rápido con Docker.
+- Integración con PostgreSQL para persistencia.
 
-1. Clona este repositorio:
-
-```bash
-git clone https://github.com/Carl0gonzalez/dockercomposeiDempiere12-postgreSQL-.git
-cd idempiere12-docker
-```
-
-2. Inicia los contenedores:
+## ▶️ Ejecutar
 
 ```bash
-./instalar_idempiere.sh
+git clone git@github.com:Carl0gonzalez/dockercomposeiDempiere12-postgreSQL-.git
+cd dockercomposeiDempiere12-postgreSQL-
+docker compose up -d
 ```
 
-3. Accede a iDempiere desde tu navegador:
+## 💡 Valor del proyecto
 
-- http://localhost:8460
-- Usuario: `SuperUser`
-- Contraseña: `System`
+Refuerza tu perfil en ERP, infraestructura reproducible y automatización de ambientes.
 
-## ⚠️ Instalación automática de plugins
+## 👤 Autor
 
-> ⚠️ La instalación automática de plugins (como el plugin LCO Detailed Names) está en construcción.  
-> Actualmente el contenedor genera el directorio `dropins`, pero el plugin debe instalarse manualmente si no se encuentra disponible en una URL pública estable.
+**Carlo González**
 
-## 📁 Estructura del proyecto
-
-```
-.
-├── docker-compose.yml 
-├── Dockerfile
-├── install-plugins.sh
-├── init-user.sql
-├── instalar_idempiere.sh
-├── entrypoint.sh
-└── README.MD
-```
-
-## 🧪 Notas adicionales
-
-- El contenedor de base de datos expone el puerto `5436`, y la contraseña del usuario `postgres` es `postgres`.
-- Los datos persistentes se almacenan en volúmenes Docker (`pgdata` y `idempiere_data`).
-- Si realizas cambios al script de instalación de plugins, asegúrate de reconstruir los contenedores con `--build`.
-- Despues de la instalación inicial espera dos minutos (o anda a mirar el log del Contenedor de Idempiere para ver la magia) mientras se instala la base de datos.
-
-## 📬 Contribuciones
-
-Las contribuciones están abiertas. Puedes abrir un issue o enviar un pull request.
-
-## 📄 Licencia
-
-Este proyecto está bajo licencia MIT.  
