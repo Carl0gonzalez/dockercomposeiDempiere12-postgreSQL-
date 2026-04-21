@@ -1,24 +1,35 @@
 # 🐳 dockercomposeiDempiere12-postgreSQL-
 
-Proyecto enfocado en **levantar iDempiere 12 con PostgreSQL mediante Docker Compose**, orientado a laboratorios y ambientes reproducibles.
+Repositorio orientado al **levantamiento de iDempiere 12 con PostgreSQL usando Docker Compose**, ideal para ambientes reproducibles de prueba o desarrollo.
 
 ![Docker](https://img.shields.io/badge/Docker-compose-blue?logo=docker) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-db-336791?logo=postgresql) ![iDempiere](https://img.shields.io/badge/iDempiere-ERP-0A7E8C)
 
-## Descripción
+---
 
-El repositorio está pensado para simplificar el arranque de un entorno ERP encapsulando servicios críticos en contenedores, reduciendo el esfuerzo de preparación manual.
+## 📌 Objetivo
 
-## Objetivo
+Automatizar la preparación de un entorno iDempiere basado en contenedores, reduciendo configuración manual y facilitando pruebas repetibles.
 
-Facilitar pruebas, demos y desarrollo técnico sobre iDempiere con una infraestructura local consistente.
+## 🧩 Qué aporta
 
-## Uso
+- Estandarización del entorno.
+- Base para demos y laboratorios técnicos.
+- Arranque rápido con Docker.
+- Integración con PostgreSQL para persistencia.
+
+## ▶️ Ejecutar
 
 ```bash
+git clone git@github.com:Carl0gonzalez/dockercomposeiDempiere12-postgreSQL-.git
+cd dockercomposeiDempiere12-postgreSQL-
 docker compose up -d
 ```
 
-## Autor
+## 💡 Valor del proyecto
+
+Refuerza tu perfil en ERP, infraestructura reproducible y automatización de ambientes.
+
+## 👤 Autor
 
 **Carlo González**
 
